@@ -206,30 +206,10 @@ function greatestProduct(matrix) {
         maxProduct = Math.max(maxProduct, verticalProduct);
       }
 
-      // Checking diagonal product (down-right)
-      if (i + 3 < rows && j + 3 < cols) {
-        const diagonalProduct = calculateProduct(
-          matrix[i][j],
-          matrix[i + 1][j + 1],
-          matrix[i + 2][j + 2],
-          matrix[i + 3][j + 3]
-        );
-        maxProduct = Math.max(maxProduct, diagonalProduct);
-      }
-
-      // Checking diagonal product (down-left)
-      if (i + 3 < rows && j - 3 >= 0) {
-        const diagonalLeftProduct = calculateProduct(
-          matrix[i][j],
-          matrix[i + 1][j - 1],
-          matrix[i + 2][j - 2],
-          matrix[i + 3][j - 3]
-        );
-        maxProduct = Math.max(maxProduct, diagonalLeftProduct);
-      }
+      
     }
   }
 
   return maxProduct;
 }
-console.log(greatestProduct(matrix1));
+console.log(greatestProduct(matrix));
